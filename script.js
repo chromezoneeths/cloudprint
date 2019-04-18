@@ -107,22 +107,16 @@ function exportPdf() {
 }
 
 function printDoc(pdf) {
-  var data = {
-    xsrf: "AIp06Dh-Xmu7IEC2mUhJYroUgB2gUDTrHA:1555612559505",
-    printerid: "5ead4e7d-bf4d-6a12-73c7-2b2ee9f0fe1a",
-    ticket: '{"version": "1.0"}',
-    title: 'Receipt',
-    content: pdf
-};
+  var formData = new FormData();
+  formData.append('pdf', pdf, 'pdf.pdf');
   var req  = new XMLHttpRequest();
-  var url = "https://cors-anywhere.herokuapp.com/https://www.google.com/cloudprint/submit";
+  var url = "https://cors-anywhere.herokuapp.com/https://www.google.com/cloudprint/submit?printerid=5ead4e7d-bf4d-6a12-73c7-2b2ee9f0fe1a&xsrf=AIp06Dh-Xmu7IEC2mUhJYroUgB2gUDTrHA:1555612559505&ticket='{\"version\": \"1.0\"}'&title=Receipt";
   req.onreadystatechange = function() {//Call a function when the state changes.
     if(req.readyState == 4 && req.status == 200) {
         alert(req.responseText);
     }
-};
-    req.open('POST', url, true);
-  req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+  };
+  req.open('POST', url, true);
   req.setRequestHeader("Authorization","OAuth " + accessTkn);
-  req.send(data);
+  req.send(formData);
 }
