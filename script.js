@@ -108,7 +108,7 @@ function exportPdf() {
 
 function printDoc(pdf) {
   var data = {
-    xsrf: "13b319c7-6ebc-4742-b097-269c70d8d43d",
+    xsrf: "AIp06Dh-Xmu7IEC2mUhJYroUgB2gUDTrHA:1555612559505",
     printerid: "5ead4e7d-bf4d-6a12-73c7-2b2ee9f0fe1a",
     ticket: '{"version": "1.0"}',
     title: 'Receipt',
