@@ -118,7 +118,7 @@ function printDoc(pdf) {
     content: pdf
 };
   var req  = new XMLHttpRequest();
-  var url = "https://www.google.com/cloudprint/submit?printerid=13b319c7-6ebc-4742-b097-269c70d8d43d";
+  var url = "https://cors-anywhere.herokuapp.com/https://www.google.com/cloudprint/submit?printerid=13b319c7-6ebc-4742-b097-269c70d8d43d";
   req.onreadystatechange = function() {//Call a function when the state changes.
     if(req.readyState == 4 && req.status == 200) {
         alert(req.responseText);
