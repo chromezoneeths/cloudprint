@@ -126,6 +126,6 @@ function printDoc(pdf) {
 };
     req.open('POST', url, true);
   req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-  req.setRequestHeader("Authorization","Bearer " + accessTkn);
+  req.setRequestHeader("Authorization","OAuth " + accessTkn);
   req.send(data);
 }
