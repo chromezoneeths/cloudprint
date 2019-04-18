@@ -102,7 +102,7 @@ function exportPdf() {
   centerText(device, 5.5);
 
   doc.addImage(img, 0.25, 6, 4, 1);
-  var pdf = doc.output("dataurl", "receipt");
+  var pdf = doc.output();
   printDoc(pdf);
 }
 
