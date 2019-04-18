@@ -33,8 +33,10 @@ function onSignIn(googleUser) {
 var img;
 
 function genPdf() {
-
-
+  document.getElementById('export').onclick = exportPdf();
+}
+function exportPdf() {
+  
   img = document.createElement("img");
 
   JsBarcode(img, serial, {
@@ -44,11 +46,6 @@ function genPdf() {
     margin: 0
   });
 
-  console.log(img);
-
-  document.getElementById('export').onclick = exportPdf();
-}
-function exportPdf() {
   var first = student.split(" ")[0];
   var last = student.split(" ")[1];
   var doc = new jsPDF("p", "in", [324, 576]);
