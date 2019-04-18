@@ -108,7 +108,7 @@ function exportPdf() {
 
 function printDoc(pdf) {
   var formData = new FormData();
-  formData.append('pdf', pdf, 'pdf.pdf');
+  formData.append('content', pdf, 'pdf.pdf');
   var req  = new XMLHttpRequest();
   var url = "https://cors-anywhere.herokuapp.com/https://www.google.com/cloudprint/submit?printerid=5ead4e7d-bf4d-6a12-73c7-2b2ee9f0fe1a&xsrf=AIp06Dh-Xmu7IEC2mUhJYroUgB2gUDTrHA:1555612559505&ticket='{\"version\": \"1.0\"}'&title=Receipt";
   req.onreadystatechange = function() {//Call a function when the state changes.
