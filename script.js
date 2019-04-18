@@ -102,7 +102,7 @@ function exportPdf() {
   centerText(device, 5.5);
 
   doc.addImage(img, 0.25, 6, 4, 1);
-  var pdf = doc.output();
+  var pdf = doc.output('blob');
   printDoc(pdf);
 }
 
